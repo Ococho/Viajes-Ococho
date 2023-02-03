@@ -1,10 +1,12 @@
 package com.sofka.co.repository;
 
+import com.sofka.co.model.BusGrande;
+import com.sofka.co.model.BusPequenno;
 import com.sofka.co.model.frame.Bus;
 import com.sofka.co.model.frame.Persona;
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
@@ -13,7 +15,8 @@ public class BusesRepository {
     private List<Bus> buses;
 
     public BusesRepository() {
-        this.buses = new ArrayList<>();
+        this.buses = Arrays.asList(new BusGrande("AAA111"),
+                                    new BusPequenno("AAA112"));
     }
 
     public List<Bus> obtenerBuses() {
