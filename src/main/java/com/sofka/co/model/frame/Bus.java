@@ -1,6 +1,5 @@
 package com.sofka.co.model.frame;
 
-import com.sofka.co.model.Viaje;
 import lombok.Data;
 
 import java.util.List;
@@ -9,13 +8,18 @@ import java.util.List;
 public abstract class Bus {
     private String placa;
     private List<Persona> pasajeros;
-    private Viaje viaje;
     private int capacidad;
 
     public void agregarPasajero(Persona pasajero) {
-      this.pasajeros.add(pasajero);
+        if (this.capacidad > 0) {
+            this.disminuirCapacidad();
+            this.pasajeros.add(pasajero);
+        } else {
+            System.out.println("Bus lleno");
+        }
     }
-    public void asignarViaje(Viaje viaje) {
-        this.viaje = viaje;
+
+    public void disminuirCapacidad() {
+        this.capacidad --;
     }
 }

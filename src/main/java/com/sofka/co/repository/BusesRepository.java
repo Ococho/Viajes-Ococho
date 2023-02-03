@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Repository
 public class BusesRepository {
@@ -27,8 +28,10 @@ public class BusesRepository {
         this.buses.add(bus);
     }
 
-    public void agregarPersonaABusPorPlaca(String placa, Persona persona) {
-        this.buses.stream().filter(bus -> bus.getPlaca().equals(placa)).findFirst().orElse(null)
-                .agregarPasajero(persona);
+    public void agregarPasajeroABusPorPlaca(String placa, Persona pasajero) {
+        Objects.requireNonNull(this.buses.stream().filter(bus -> bus.getPlaca().equals(placa))
+                                                                .findFirst()
+                                                                .orElse(null))
+                                                                .agregarPasajero(pasajero);
     }
 }
