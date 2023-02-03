@@ -7,7 +7,10 @@ import java.util.List;
 
 public interface IBusesService {
     List<Bus> obtenerBuses();
+
     Bus obtenerBusPorPlaca(String placa);
+
     void registrarBus(Bus bus);
+
     void agregarPasajeroABusPorPlaca(String placa, Persona persona);
 }

@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class BusPequenno extends Bus {
 
-    public BusPequenno (String placa) {
+    public BusPequenno(String placa) {
         this.setPlaca(placa);
         this.setPasajeros(new ArrayList<>());
         this.setCapacidad(13);

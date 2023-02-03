@@ -29,9 +29,10 @@ public class BusesRepository {
     }
 
     public void agregarPasajeroABusPorPlaca(String placa, Persona pasajero) {
-        Objects.requireNonNull(this.buses.stream().filter(bus -> bus.getPlaca().equals(placa))
-                                                                .findFirst()
-                                                                .orElse(null))
-                                                                .agregarPasajero(pasajero);
+        Objects.requireNonNull(
+                this.buses.stream().filter(bus -> bus.getPlaca().equals(placa))
+                        .findFirst()
+                        .orElse(null))
+                        .agregarPasajero(pasajero);
     }
 }

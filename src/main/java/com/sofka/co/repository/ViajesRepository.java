@@ -19,9 +19,7 @@ public class ViajesRepository {
     }
 
     public Viaje obtenerViajePorHorario(String horario) {
-        return this.viajes.stream().filter(viaje -> viaje.getHorario().equals(horario))
-                                                    .findFirst()
-                                                    .orElse(null);
+        return this.viajes.stream().filter(viaje -> viaje.getHorario().equals(horario)).findFirst().orElse(null);
     }
 
     public void registrarViaje(Viaje viaje) {

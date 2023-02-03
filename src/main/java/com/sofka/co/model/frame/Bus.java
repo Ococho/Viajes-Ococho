@@ -20,6 +20,6 @@ public abstract class Bus {
     }
 
     public void disminuirCapacidad() {
-        this.capacidad --;
+        this.capacidad--;
     }
 }

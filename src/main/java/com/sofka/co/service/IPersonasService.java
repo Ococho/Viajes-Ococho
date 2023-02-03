@@ -6,6 +6,8 @@ import java.util.List;
 
 public interface IPersonasService {
     List<Persona> obtenerPersonas();
+
     Persona modificarPersona(Persona personaNueva);
+
     void registrarPersona(Persona persona);
 }

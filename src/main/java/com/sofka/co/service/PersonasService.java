@@ -20,11 +20,11 @@ public class PersonasService implements IPersonasService {
 
     @Override
     public Persona modificarPersona(Persona personaAModificar) {
-        var lugarEnLista = personasRepository.obtenerPersonas()
-                            .indexOf(personasRepository
-                            .obtenerPersonaPorId(
-                            personaAModificar.getId()));
-        personasRepository.obtenerPersonas().set(lugarEnLista, personaAModificar);
+        var lugarEnLista = this.obtenerPersonas()
+                .indexOf(personasRepository
+                        .obtenerPersonaPorId(
+                                personaAModificar.getId()));
+        this.obtenerPersonas().set(lugarEnLista, personaAModificar);
         return personasRepository.obtenerPersonaPorId(personaAModificar.getId());
     }
 

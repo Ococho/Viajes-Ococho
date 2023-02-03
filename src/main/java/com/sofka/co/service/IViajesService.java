@@ -1,5 +1,19 @@
 package com.sofka.co.service;
 
+import com.sofka.co.model.Viaje;
+
+import java.util.List;
+
 public interface IViajesService {
-    //... agregar viajes, ver viajes, ver viaje por horario, modificar horario a viaje, modificar el bus al viaje, modificar destino a viaje
+    List<Viaje> obtenerViajes();
+
+    Viaje obtenerViajePorHorario(String horario);
+
+    void registrarViaje(Viaje viaje);
+
+    void modificarHorario(Viaje viaje, String horarioNuevo);
+
+    void modificarBus(Viaje viaje, String placa);
+
+    void modificarDestino(Viaje viaje, String destinoNuevo);
 }
