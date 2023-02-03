@@ -29,6 +29,4 @@ public class PersonasController {
     public ResponseEntity modificarPersona(@RequestBody Persona personaAModificar) {
         return new ResponseEntity(personasService.modificarPersona(personaAModificar), HttpStatus.ACCEPTED);
     }
-
-
 }
