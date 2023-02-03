@@ -35,7 +35,6 @@ public class BusesService implements IBusesService {
 
     @Override
     public void agregarPasajeroABusPorPlaca(String placa, Persona persona) {
-        //busesRepository.agregarPasajeroABusPorPlaca(placa, personasRepository.obtenerPersonaPorId());
+        busesRepository.agregarPasajeroABusPorPlaca(placa, personasRepository.obtenerPersonaPorId(persona.getId()));
     }
-    //...
 }
