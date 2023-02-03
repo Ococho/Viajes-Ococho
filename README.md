@@ -11,8 +11,8 @@ Así, los requerimientos para dar solución al problema son:
 - Usar la API Stream para recorrer los *Array*
 - Aplicar principios SOLID
 - Utilizar patrones de diseño
+- Debe ser una API REST usando métodos HTTP necesarios para dar solución a todos los requerimientos
 - Usar una estructura de proyecto por capas (Uso de paquetes *controller*, *repository*, *service*)
 - El lenguaje de implementación debe ser Java con el framework de Spring Boot
-- Debe ser una API REST usando métodos HTTP necesarios para dar solución a todos los requerimientos
 
 ***KISS!*** :kiss:
