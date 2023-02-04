@@ -6,17 +6,17 @@ import com.sofka.co.model.frame.Bus;
 import com.sofka.co.model.frame.Persona;
 import org.springframework.stereotype.Repository;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
 @Repository
 public class BusesRepository {
-    private List<Bus> buses;
+    private List<Bus> buses = new ArrayList<>();
 
     public BusesRepository() {
-        this.buses = Arrays.asList(new BusGrande("AAA111"),
-                                    new BusPequenno("AAA112"));
+        this.buses.add(new BusGrande("AAA111"));
+        this.buses.add(new BusPequenno("AAA112"));
     }
 
     public List<Bus> obtenerBuses() {

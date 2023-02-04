@@ -5,12 +5,9 @@ import com.sofka.co.model.frame.Persona;
 public class Adulto extends Persona {
     private String telefono;
 
-    public Adulto(String nombre, String apellido, String id) {
-        this.setNombre(nombre);
-        this.setApellido(apellido);
-        this.setEdad(18);
-        this.setId(id);
-        this.setTelefono("1234567890");
+    public Adulto(String nombre, String apellido, String id, int edad, String telefono) {
+        super(nombre, apellido, id, edad);
+        this.setTelefono(telefono);
     }
 
     public void setTelefono(String telefono) {

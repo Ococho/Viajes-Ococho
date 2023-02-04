@@ -5,16 +5,16 @@ import com.sofka.co.model.Menor;
 import com.sofka.co.model.frame.Persona;
 import org.springframework.stereotype.Repository;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 
 @Repository
 public class PersonasRepository {
-    private List<Persona> personas;
+    private List<Persona> personas = new ArrayList<>();
 
     public PersonasRepository() {
-        this.personas = Arrays.asList(new Adulto("Juan", "Cruz", "1234567890"),
-                                        new Adulto("Maria", "Ruiz", "1234567891"));
+        this.personas.add(new Adulto("Juan", "Cruz", "1234567890", 19, "1234567890"));
+        this.personas.add(new Menor("Maria", "Ruiz", "1234567891", 10, this.personas.get(0)));
     }
 
     public List<Persona> obtenerPersonas() {
