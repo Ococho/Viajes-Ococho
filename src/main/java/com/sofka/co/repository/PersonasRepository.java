@@ -15,7 +15,6 @@ public class PersonasRepository {
     public PersonasRepository() {
         this.personas = Arrays.asList(new Adulto("Juan", "Cruz", "1234567890"),
                                         new Adulto("Maria", "Ruiz", "1234567891"));
-        this.registrarPersona(new Menor("Luis", "Cruz", this.obtenerPersonaPorId("1234567890"), "1234567892"));
     }
 
     public List<Persona> obtenerPersonas() {

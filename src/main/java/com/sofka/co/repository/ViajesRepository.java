@@ -4,7 +4,7 @@ import com.sofka.co.model.Viaje;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 
 @Repository
@@ -15,8 +15,7 @@ public class ViajesRepository {
     private BusesRepository busesRepository;
 
     public ViajesRepository() {
-        this.viajes = Arrays.asList(new Viaje(busesRepository.obtenerBusPorPlaca("AAA111"), "Jardín", "Ene-1-12:59-P.M"),
-                                    new Viaje(busesRepository.obtenerBusPorPlaca("AAA112"), "Caldas", "Ene-1-11:59-A.M"));
+        this.viajes = new ArrayList<>();
     }
 
     public List<Viaje> obtenerViajes() {
