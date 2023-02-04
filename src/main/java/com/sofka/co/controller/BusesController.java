@@ -1,5 +1,7 @@
 package com.sofka.co.controller;
 
+import com.sofka.co.model.BusGrande;
+import com.sofka.co.model.BusPequenno;
 import com.sofka.co.model.frame.Bus;
 import com.sofka.co.model.frame.Persona;
 import com.sofka.co.service.IBusesService;
@@ -15,9 +17,15 @@ public class BusesController {
     @Autowired
     private IBusesService busesService;
 
-    @PostMapping()
-    public ResponseEntity registrarBus(@RequestBody Bus bus) {
-        busesService.registrarBus(bus);
+    @PostMapping("grande")
+    public ResponseEntity registrarBusGrande(@RequestBody BusGrande busGrande) {
+        busesService.registrarBusGrande(busGrande);
+        return new ResponseEntity(HttpStatus.CREATED);
+    }
+
+    @PostMapping("pequenno")
+    public ResponseEntity registrarBusPequenno(@RequestBody BusPequenno busPequenno) {
+        busesService.registrarBusPequenno(busPequenno);
         return new ResponseEntity(HttpStatus.CREATED);
     }
 

@@ -1,5 +1,7 @@
 package com.sofka.co.service;
 
+import com.sofka.co.model.BusGrande;
+import com.sofka.co.model.BusPequenno;
 import com.sofka.co.model.frame.Bus;
 import com.sofka.co.model.frame.Persona;
 import com.sofka.co.repository.BusesRepository;
@@ -29,8 +31,13 @@ public class BusesService implements IBusesService {
     }
 
     @Override
-    public void registrarBus(Bus bus) {
-        busesRepository.registrarBus(bus);
+    public void registrarBusGrande(BusGrande busGrande) {
+        busesRepository.registrarBusGrande(busGrande);
+    }
+
+    @Override
+    public void registrarBusPequenno(BusPequenno busPequenno) {
+        busesRepository.registrarBusPequenno(busPequenno);
     }
 
     @Override

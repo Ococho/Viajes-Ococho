@@ -27,15 +27,19 @@ public class BusesRepository {
         return this.buses.stream().filter(bus -> bus.getPlaca().equals(placa)).findFirst().orElse(null);
     }
 
-    public void registrarBus(Bus bus) {
-        this.buses.add(bus);
+    public void registrarBusGrande(BusGrande busGrande) {
+        this.buses.add(busGrande);
+    }
+
+    public void registrarBusPequenno(BusPequenno busPequenno) {
+        this.buses.add(busPequenno);
     }
 
     public void agregarPasajeroABusPorPlaca(String placa, Persona pasajero) {
         Objects.requireNonNull(
-                this.buses.stream().filter(bus -> bus.getPlaca().equals(placa))
-                        .findFirst()
-                        .orElse(null))
-                        .agregarPasajero(pasajero);
+                        this.buses.stream().filter(bus -> bus.getPlaca().equals(placa))
+                                .findFirst()
+                                .orElse(null))
+                                .agregarPasajero(pasajero);
     }
 }

@@ -1,5 +1,7 @@
 package com.sofka.co.service;
 
+import com.sofka.co.model.BusGrande;
+import com.sofka.co.model.BusPequenno;
 import com.sofka.co.model.frame.Bus;
 import com.sofka.co.model.frame.Persona;
 
@@ -10,7 +12,9 @@ public interface IBusesService {
 
     Bus obtenerBusPorPlaca(String placa);
 
-    void registrarBus(Bus bus);
+    void registrarBusGrande(BusGrande busGrande);
+
+    void registrarBusPequenno(BusPequenno busPequenno);
 
     void agregarPasajeroABusPorPlaca(String placa, Persona persona);
 }
