@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class PersonasService implements IPersonasService {
@@ -21,13 +22,12 @@ public class PersonasService implements IPersonasService {
     }
 
     @Override
-    public Persona modificarPersona(Persona personaAModificar) {
-        var lugarEnLista = this.obtenerPersonas()
-                .indexOf(personasRepository
-                        .obtenerPersonaPorId(
-                                personaAModificar.getId()));
-        this.obtenerPersonas().set(lugarEnLista, personaAModificar);
-        return personasRepository.obtenerPersonaPorId(personaAModificar.getId());
+    public void modificarPersona(Adulto personaAModificar) {
+        personasRepository.setPersonas(
+                personasRepository.obtenerPersonas()
+                        .stream()
+                        .map(persona -> persona.getId().equals(personaAModificar.getId()) ? personaAModificar : persona)
+                        .collect(Collectors.toList()));
     }
 
     @Override

@@ -13,8 +13,16 @@ public class PersonasRepository {
     private List<Persona> personas = new ArrayList<>();
 
     public PersonasRepository() {
-        this.personas.add(new Adulto("Juan", "Cruz", "1234567890", 25, "1234567890"));
-        this.personas.add(new Menor("Maria", "Ruiz", "1234567891", 10, this.personas.get(0)));
+        this.personas.add(new Adulto("Juan",
+                                    "Cruz",
+                                    "1234567890",
+                                    25,
+                                    "1234567890"));
+        this.personas.add(new Menor("Maria",
+                                    "Ruiz",
+                                    "1234567891",
+                                    10,
+                                    new Adulto("Juan", "Cruz", "1234567890", 25, "1234567890")));
     }
 
     public List<Persona> obtenerPersonas() {
@@ -31,5 +39,9 @@ public class PersonasRepository {
 
     public void registrarMenor(Menor menor) {
         this.personas.add(menor);
+    }
+
+    public void setPersonas(List<Persona> personas) {
+        this.personas = personas;
     }
 }

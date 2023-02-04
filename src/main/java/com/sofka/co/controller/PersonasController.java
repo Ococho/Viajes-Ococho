@@ -34,7 +34,8 @@ public class PersonasController {
     }
 
     @PutMapping()
-    public ResponseEntity modificarPersona(@RequestBody Persona personaAModificar) {
-        return new ResponseEntity(personasService.modificarPersona(personaAModificar), HttpStatus.ACCEPTED);
+    public ResponseEntity modificarPersona(@RequestBody Adulto personaAModificar) {
+        personasService.modificarPersona(personaAModificar);
+        return new ResponseEntity(HttpStatus.ACCEPTED);
     }
 }
