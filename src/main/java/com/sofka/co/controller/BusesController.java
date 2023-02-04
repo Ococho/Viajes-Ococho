@@ -28,7 +28,7 @@ public class BusesController {
         return new ResponseEntity(HttpStatus.CREATED);
     }
 
-    @PostMapping("{placa}")
+    @PostMapping("{placa}") // TODO: Acceder con el ID de la persona y recorrer el arreglo
     public ResponseEntity subirPasajero(@RequestBody Adulto persona, @PathVariable("placa") String placa) {
         busesService.agregarPasajeroABusPorPlaca(placa, persona);
         return new ResponseEntity(HttpStatus.CREATED);

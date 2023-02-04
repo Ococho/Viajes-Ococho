@@ -33,7 +33,7 @@ public class PersonasController {
         return new ResponseEntity(personasService.obtenerPersonas(), HttpStatus.FOUND);
     }
 
-    @PutMapping()
+    @PutMapping() // TODO: Acceder con un ID y recorrer el arreglo
     public ResponseEntity modificarPersona(@RequestBody Adulto personaAModificar) {
         personasService.modificarPersona(personaAModificar);
         return new ResponseEntity(HttpStatus.ACCEPTED);

@@ -9,7 +9,7 @@ public class Viaje {
     private String destino;
     private String horario;
 
-    public Viaje(Bus bus, String destino, String horario) {
+    public Viaje(BusGrande bus, String destino, String horario) {
         this.bus = bus;
         this.destino = destino;
         this.horario = horario;
