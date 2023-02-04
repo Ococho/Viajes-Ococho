@@ -15,8 +15,8 @@ public class ViajesRepository {
     private BusesRepository busesRepository;
 
     public ViajesRepository() {
-        this.viajes = Arrays.asList(new Viaje(busesRepository.obtenerBusPorPlaca("AAA111"), "Jardín", "Ene 1 12:59 P.M."),
-                                    new Viaje(busesRepository.obtenerBusPorPlaca("AAA112"), "Caldas", "Ene 1 11:59 A.M."));
+        this.viajes = Arrays.asList(new Viaje(busesRepository.obtenerBusPorPlaca("AAA111"), "Jardín", "Ene-1-12:59-P.M"),
+                                    new Viaje(busesRepository.obtenerBusPorPlaca("AAA112"), "Caldas", "Ene-1-11:59-A.M"));
     }
 
     public List<Viaje> obtenerViajes() {
