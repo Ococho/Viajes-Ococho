@@ -1,5 +1,7 @@
 package com.sofka.co.service;
 
+import com.sofka.co.model.Adulto;
+import com.sofka.co.model.Menor;
 import com.sofka.co.model.frame.Persona;
 import com.sofka.co.repository.PersonasRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +31,12 @@ public class PersonasService implements IPersonasService {
     }
 
     @Override
-    public void registrarPersona(Persona persona) {
-        personasRepository.registrarPersona(persona);
+    public void registrarAdulto(Adulto adulto) {
+        personasRepository.registrarAdulto(adulto);
+    }
+
+    @Override
+    public void registrarMenor(Menor menor) {
+        personasRepository.registrarMenor(menor);
     }
 }

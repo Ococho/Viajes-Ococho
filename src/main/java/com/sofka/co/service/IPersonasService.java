@@ -1,5 +1,7 @@
 package com.sofka.co.service;
 
+import com.sofka.co.model.Adulto;
+import com.sofka.co.model.Menor;
 import com.sofka.co.model.frame.Persona;
 
 import java.util.List;
@@ -9,5 +11,7 @@ public interface IPersonasService {
 
     Persona modificarPersona(Persona personaNueva);
 
-    void registrarPersona(Persona persona);
+    void registrarAdulto(Adulto adulto);
+
+    void registrarMenor(Menor menor);
 }

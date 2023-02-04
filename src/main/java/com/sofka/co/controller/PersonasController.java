@@ -1,5 +1,7 @@
 package com.sofka.co.controller;
 
+import com.sofka.co.model.Adulto;
+import com.sofka.co.model.Menor;
 import com.sofka.co.model.frame.Persona;
 import com.sofka.co.service.IPersonasService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,9 +16,15 @@ public class PersonasController {
     @Autowired
     private IPersonasService personasService;
 
-    @PostMapping()
-    public ResponseEntity registrarPersona(@RequestBody Persona persona) {
-        personasService.registrarPersona(persona);
+    @PostMapping("adulto")
+    public ResponseEntity registrarPersona(@RequestBody Adulto adulto) {
+        personasService.registrarAdulto(adulto);
+        return new ResponseEntity(HttpStatus.CREATED);
+    }
+
+    @PostMapping("menor")
+    public ResponseEntity registrarPersona(@RequestBody Menor menor) {
+        personasService.registrarMenor(menor);
         return new ResponseEntity(HttpStatus.CREATED);
     }
 
