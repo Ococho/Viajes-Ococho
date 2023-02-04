@@ -1,9 +1,8 @@
 package com.sofka.co.controller;
 
+import com.sofka.co.model.Adulto;
 import com.sofka.co.model.BusGrande;
 import com.sofka.co.model.BusPequenno;
-import com.sofka.co.model.frame.Bus;
-import com.sofka.co.model.frame.Persona;
 import com.sofka.co.service.IBusesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -30,7 +29,7 @@ public class BusesController {
     }
 
     @PostMapping("{placa}")
-    public ResponseEntity subirPasajero(@RequestBody Persona persona, @PathVariable("placa") String placa) {
+    public ResponseEntity subirPasajero(@RequestBody Adulto persona, @PathVariable("placa") String placa) {
         busesService.agregarPasajeroABusPorPlaca(placa, persona);
         return new ResponseEntity(HttpStatus.CREATED);
     }

@@ -1,5 +1,6 @@
 package com.sofka.co.service;
 
+import com.sofka.co.model.Adulto;
 import com.sofka.co.model.BusGrande;
 import com.sofka.co.model.BusPequenno;
 import com.sofka.co.model.frame.Bus;

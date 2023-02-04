@@ -15,8 +15,8 @@ public class BusesRepository {
     private List<Bus> buses = new ArrayList<>();
 
     public BusesRepository() {
-        this.buses.add(new BusGrande("AAA111"));
-        this.buses.add(new BusPequenno("AAA112"));
+        this.buses.add(new BusGrande("AAA111", new ArrayList<>(), 33));
+        this.buses.add(new BusPequenno("AAA112", new ArrayList<>(), 17));
     }
 
     public List<Bus> obtenerBuses() {
@@ -35,11 +35,11 @@ public class BusesRepository {
         this.buses.add(busPequenno);
     }
 
-    public void agregarPasajeroABusPorPlaca(String placa, Persona pasajero) {
+    public void agregarPasajeroABusPorPlaca(String placa, Persona persona) {
         Objects.requireNonNull(
                         this.buses.stream().filter(bus -> bus.getPlaca().equals(placa))
                                 .findFirst()
                                 .orElse(null))
-                                .agregarPasajero(pasajero);
+                                .agregarPasajero(persona);
     }
 }

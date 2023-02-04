@@ -2,7 +2,6 @@ package com.sofka.co.model.frame;
 
 import lombok.Data;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -11,16 +10,16 @@ public abstract class Bus {
     private List<Persona> pasajeros;
     private int capacidad;
 
-    public Bus(String placa) {
+    public Bus(String placa, List<Persona> pasajeros, int capacidad) {
         this.setPlaca(placa);
-        this.setPasajeros(new ArrayList<>());
-        this.setCapacidad(0);
+        this.setPasajeros(pasajeros);
+        this.setCapacidad(capacidad);
     }
 
-    public void agregarPasajero(Persona pasajero) {
+    public void agregarPasajero(Persona persona) {
         if (this.capacidad > 0) {
             this.disminuirCapacidad();
-            this.pasajeros.add(pasajero);
+            this.pasajeros.add(persona);
         } else {
             System.out.println("Bus lleno");
         }
